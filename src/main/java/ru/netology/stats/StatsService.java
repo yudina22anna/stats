@@ -10,12 +10,7 @@ public class StatsService {
     }
 
     public long calculateAverageSum(int[] values) {
-        int averageMonth = 0;
-        for (int value : values) {
-            averageMonth += value;
-        }
-        averageMonth = averageMonth / 12;
-        return averageMonth;
+        return calculateSum(values)/ values.length;
     }
 
     public long calculateMaxMonth(int[] values) {
@@ -43,7 +38,7 @@ public class StatsService {
         for (int value : values) {
             averageMonth += value;
         }
-        averageMonth = averageMonth / 12;
+        averageMonth = averageMonth / values.length;
         int belowAverageMonth = 0;
         for (int value : values) {
             if (value < averageMonth) belowAverageMonth++;
@@ -56,7 +51,7 @@ public class StatsService {
         for (int value : values) {
             averageMonth += value;
         }
-        averageMonth = averageMonth / 12;
+        averageMonth = averageMonth / values.length;
         int aboveAverageMonth = 0;
         for (int value : values) {
             if (value >= averageMonth) aboveAverageMonth++;
